@@ -7,16 +7,13 @@ każdego znaku. Teraz opłata za wiadomość jest równa sumie kosztów każdego
 Twoim zadaniem jest policzyć, ile będzie wynosić opłata za dany wyraz wedle nowego cennika.
 '''
 
-cost = dict()
-cost["a"] = 5
-cost["l"] = 25
-
-print(cost["a"])
-
-if "m" in cost:
-    print(cost["m"])
-#instrukcja jak wpisac 
-letter, value = input().split()
-cost[letter] = int(value)
-
-print(cost)
+n = int(input())
+mapa = {}
+for i in range(n):
+    [letter, cost] = input().split()
+    mapa[letter] = int(cost)
+result = 0
+slowo = input().strip()
+for i in range(len(slowo)):
+    result += mapa[slowo[i]]
+print(result / 100)
